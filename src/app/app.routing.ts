@@ -16,6 +16,10 @@ const routes : Routes  = [
                     {
                         path: '',
                         component: ContentComponent
+                    },
+                    {
+                        path: 'carousel',
+                        component: ContentComponent
                     }
                 ]
             }
