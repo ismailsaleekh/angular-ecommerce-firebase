@@ -904,7 +904,7 @@ h2.title {
     background: #fff;
     border: 0 none;
     border-radius: 0;
-    color: #FE980F;
+    color: rgba(61, 116, 29)F;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     margin-bottom: 25px;
@@ -912,8 +912,9 @@ h2.title {
 
 .product-overlay .add-to-cart:hover {
     background: #fff;
-    color: #FE980F;
+    color:rgba(61, 116, 29);
 }
+
 
 .product-overlay p {
     font-family: 'Roboto', sans-serif;
@@ -970,7 +971,7 @@ h2.title {
 
 .choose ul li a:hover {
     background: none;
-    color: #FE980F;
+    color: rgba(61, 116, 29);
 }
 
 .category-tab {
@@ -979,7 +980,7 @@ h2.title {
 
 .category-tab ul {
     background: #40403E;
-    border-bottom: 1px solid #FE980F;
+    border-bottom: 1px solid rgba(61, 116, 29);
     list-style: none outside none;
     margin: 0 0 30px;
     padding: 0;

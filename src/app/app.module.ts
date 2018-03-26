@@ -10,6 +10,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
+import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { CarouselModule } from 'ngx-bootstrap';
     FooterComponent,
     CheckoutComponent,
     NavbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    CartComponent,
+    HomeComponent
   ],
   imports: [
     CarouselModule.forRoot(),

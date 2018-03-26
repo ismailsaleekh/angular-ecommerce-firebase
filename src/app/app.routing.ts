@@ -1,3 +1,5 @@
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
@@ -14,13 +16,20 @@ const routes : Routes  = [
                 component: MainComponent,
                 children: [
                     {
-                        path: '',
-                        component: ContentComponent
+                        path: 'cart',
+                        component: CartComponent
                     },
-                    {
-                        path: 'carousel',
-                        component: ContentComponent
-                    }
+                        {
+                            path:'',
+                            component : HomeComponent,
+                            children: [
+                                {
+                                    path: '',
+                                    component: ContentComponent
+                                }
+                            ]
+                        }
+
                 ]
             }
         ]
