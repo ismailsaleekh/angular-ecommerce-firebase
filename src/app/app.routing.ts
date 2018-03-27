@@ -1,3 +1,6 @@
+import { AddProductComponent } from './add-product/add-product.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { MainComponent } from './main/main.component';
@@ -19,6 +22,10 @@ const routes : Routes  = [
                         path: 'cart',
                         component: CartComponent
                     },
+                    {
+                        path: 'login',
+                        component: LoginComponent
+                    },
                         {
                             path:'',
                             component : HomeComponent,
@@ -33,7 +40,16 @@ const routes : Routes  = [
                 ]
             }
         ]
-    }, 
+    },{
+        path: 'admin',
+        component: AdminComponent,
+        children: [
+            {
+                path:'add',
+                component: AddProductComponent
+            }
+        ]
+    } 
 
 ]
 
