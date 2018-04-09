@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as feather from 'feather-icons'
+
+
 
 @Component({
   selector: 'admin-sidebar',
@@ -10,6 +13,7 @@ export class AdminSidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    feather.replace();
   }
 
 }
