@@ -1,3 +1,4 @@
+import { UserAddComponent } from './user-add/user-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
@@ -52,6 +53,10 @@ const routes : Routes  = [
             {
                 path:'product-list',
                 component: ProductListComponent
+            },
+            {
+                path: 'add-user',
+                component: UserAddComponent
             }
         ]
     } 
