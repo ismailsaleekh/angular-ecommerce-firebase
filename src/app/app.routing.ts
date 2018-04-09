@@ -1,3 +1,4 @@
+import { ProductListComponent } from './product-list/product-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
@@ -47,6 +48,10 @@ const routes : Routes  = [
             {
                 path:'add',
                 component: AddProductComponent
+            },
+            {
+                path:'product-list',
+                component: ProductListComponent
             }
         ]
     } 
