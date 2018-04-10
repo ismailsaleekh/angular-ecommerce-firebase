@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule, Routes} from '@angular/router';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes : Routes  = [
     {
@@ -57,6 +58,10 @@ const routes : Routes  = [
             {
                 path: 'add-user',
                 component: UserAddComponent
+            },
+            {
+                path: 'user-list',
+                component: UserListComponent
             }
         ]
     } 

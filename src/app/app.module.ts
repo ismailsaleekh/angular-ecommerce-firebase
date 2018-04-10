@@ -19,6 +19,7 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { UserAddComponent } from './user-add/user-add.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { UserAddComponent } from './user-add/user-add.component';
     AdminNavbarComponent,
     AdminSidebarComponent,
     ProductListComponent,
-    UserAddComponent
+    UserAddComponent,
+    UserListComponent
   ],
   imports: [
     CarouselModule.forRoot(),
