@@ -1,7 +1,5 @@
-import { UserAddComponent } from './user-add/user-add.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { AdminComponent } from './admin/admin.component';
+import { RouterModule, Routes} from '@angular/router';
+
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
@@ -9,8 +7,14 @@ import { MainComponent } from './main/main.component';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { RouterModule, Routes} from '@angular/router';
+
+import { AdminComponent } from './admin/admin.component';
+
+import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
+
+import { ProductListComponent } from './product-list/product-list.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes : Routes  = [
     {
