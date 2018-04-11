@@ -1,5 +1,5 @@
 import { RouterModule, Routes} from '@angular/router';
-
+//main componentns
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+//admin components
 import { AdminComponent } from './admin/admin.component';
 
 import { UserAddComponent } from './user-add/user-add.component';
@@ -15,6 +15,7 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 const routes : Routes  = [
     {
@@ -56,8 +57,12 @@ const routes : Routes  = [
         component: AdminComponent,
         children: [
             {
-                path:'add',
+                path:'add-product',
                 component: AddProductComponent
+            },
+            {
+                path:'edit-product',
+                component: EditProductComponent
             },
             {
                 path:'product-list',

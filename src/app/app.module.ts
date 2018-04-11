@@ -2,6 +2,7 @@ import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//components
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -21,6 +22,7 @@ import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { UserListComponent } from './user-list/user-list.component';
     AdminSidebarComponent,
     ProductListComponent,
     UserAddComponent,
-    UserListComponent
+    UserListComponent,
+    EditProductComponent
   ],
   imports: [
     CarouselModule.forRoot(),
