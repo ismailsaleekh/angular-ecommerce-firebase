@@ -1,0 +1,12 @@
+.google:hover {
+    background: #CE3C2D;
+    color: white;
+}
+.twitter:hover{
+    background: #5BBCEC;
+    color: white
+}
+.facebook:hover {
+    background: #0083C9;
+    color: white;
+}
