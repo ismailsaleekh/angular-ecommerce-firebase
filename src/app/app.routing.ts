@@ -1,29 +1,29 @@
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 //main componentns
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { CartComponent } from './cart/cart.component';
-import { MainComponent } from './main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MainComponent } from './components/main/main.component';
 import { AppComponent } from './app.component';
-import { ContentComponent } from './content/content.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { ContentComponent } from './components/content/content.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 //admin components
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './components/admin/admin.component';
 
-import { UserAddComponent } from './user-add/user-add.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { UserAddComponent } from './components/admin/user-add/user-add.component';
+import { UserListComponent } from './components/admin/user-list/user-list.component';
 
-import { ProductListComponent } from './product-list/product-list.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductListComponent } from './components/admin/product-list/product-list.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 
-const routes : Routes  = [
+const routes: Routes = [
     {
-        path:'',
+        path: '',
         component: AppComponent,
         children: [
             {
-                path:'',
+                path: '',
                 component: MainComponent,
                 children: [
                     {
@@ -38,34 +38,34 @@ const routes : Routes  = [
                         path: 'login',
                         component: LoginComponent
                     },
-                        {
-                            path:'',
-                            component : HomeComponent,
-                            children: [
-                                {
-                                    path: '',
-                                    component: ContentComponent
-                                }
-                            ]
-                        }
+                    {
+                        path: '',
+                        component: HomeComponent,
+                        children: [
+                            {
+                                path: '',
+                                component: ContentComponent
+                            }
+                        ]
+                    }
 
                 ]
             }
         ]
-    },{
+    }, {
         path: 'admin',
         component: AdminComponent,
         children: [
             {
-                path:'add-product',
+                path: 'add-product',
                 component: AddProductComponent
             },
             {
-                path:'edit-product',
+                path: 'edit-product',
                 component: EditProductComponent
             },
             {
-                path:'product-list',
+                path: 'product-list',
                 component: ProductListComponent
             },
             {
@@ -77,7 +77,7 @@ const routes : Routes  = [
                 component: UserListComponent
             }
         ]
-    } 
+    }
 
 ]
 
