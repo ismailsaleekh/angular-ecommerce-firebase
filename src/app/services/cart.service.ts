@@ -1,3 +1,4 @@
+import { DataService } from './data.service';
 import { Injectable } from "@angular/core";
 
 
@@ -7,7 +8,7 @@ export class CartService{
 
   private cartList: any[] = []
   
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   addToCart(product: any): void {
     product.quantity = product.quantity || 1
@@ -21,11 +22,14 @@ export class CartService{
     } else {
       this.cartList[index].quantity += 1
     }
+    this.addToStorage(this.cartList)
+  }
 
-    console.log(this.cartList);
+  addToStorage(list: object[]): void {
+    localStorage.setItem('cartListIds', JSON.stringify(list))
   }
 
   get list() {
-    return this.cartList
+    return JSON.parse(localStorage.getItem('cartListIds'))
   }
 }

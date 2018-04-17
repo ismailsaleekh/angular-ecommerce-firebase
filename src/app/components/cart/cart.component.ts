@@ -12,16 +12,19 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   async ngOnInit(): Promise<any> {
+    console.log(this.cartService.list)
     this.cartList = this.cartService.list
   }
-  
+
   public increase(product: any): void {
     product.quantity += 1
+    this.cartService.addToStorage(this.cartList)
     this.setTotalPrice()
   }
-  
+
   public decrease(product: any): void {
     product.quantity -= 1
+    this.cartService.addToStorage(this.cartList)
     this.setTotalPrice()
   }
 
@@ -29,6 +32,7 @@ export class CartComponent implements OnInit {
     this.cartList = this.cartList.filter((item: any): boolean => {
       return item.key !== product.key
     })
+    this.cartService.addToStorage(this.cartList)
   }
 
   private setTotalPrice() {
