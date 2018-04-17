@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "git push -u origin master"
+    "deploy": "git push -u origin master",
+    "update": "git stash save && git pull origin master --rebase && git stash pop",
+    "commit": "git commit -e"
   },
   "private": true,
   "dependencies": {
