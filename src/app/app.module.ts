@@ -28,6 +28,7 @@ import { ProductListComponent } from './components/admin/product-list/product-li
 import { UserAddComponent } from './components/admin/user-add/user-add.component';
 import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
+import { CartService } from './services/cart.service';
 
 
 const config = {
@@ -71,7 +72,7 @@ const config = {
     AngularFireStorageModule,
     routing
   ],
-  providers: [DataService],
+  providers: [DataService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
