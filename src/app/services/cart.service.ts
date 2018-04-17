@@ -24,4 +24,8 @@ export class CartService{
 
     console.log(this.cartList);
   }
+
+  get list() {
+    return this.cartList
+  }
 }
