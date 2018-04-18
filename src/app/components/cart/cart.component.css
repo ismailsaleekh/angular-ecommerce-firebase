@@ -1,0 +1,7 @@
+.cart_img{
+  height: 110px;
+  width: 110px;
+}
+.table>tbody>tr>td {
+  border-top: 0px;
+}
