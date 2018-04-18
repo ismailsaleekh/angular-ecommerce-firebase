@@ -12,6 +12,8 @@
           </div>
           <div class="product-overlay">
             <div class="overlay-content">
+                <a (click)="addToCart(product)" class="btn btn-default add-to-cart">
+                    <i class="fa fa-eye"></i>View product</a>
               <h2>{{product.price}}</h2>
               <p>{{product.name}}</p>
               <a (click)="addToCart(product)" class="btn btn-default add-to-cart">
