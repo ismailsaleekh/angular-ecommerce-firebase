@@ -2,11 +2,11 @@
   <div class="features_items">
     <!--features_items-->
     <h2 class="title text-center">Features Items</h2>
-    <div class="col-sm-4" *ngFor="let product of productsList">
+    <div class="col-sm-3" *ngFor="let product of productsList">
       <div class="product-image-wrapper">
         <div class="single-products">
           <div class="productinfo text-center">
-            <img src="{{product.coverUrl}}" alt="product.name" />
+            <img class="img_cover" src="{{product.coverUrl}}" alt="product.name" />
             <h2>{{product.price}}</h2>
             <p>{{product.name}}</p>
           </div>
