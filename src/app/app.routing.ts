@@ -16,6 +16,8 @@ import { UserListComponent } from './components/admin/user-list/user-list.compon
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
+import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
 
 const routes: Routes = [
     {
@@ -45,6 +47,14 @@ const routes: Routes = [
                             {
                                 path: '',
                                 component: ContentComponent
+                            },
+                            {
+                                path: 'product-details',
+                                component: ProductDetailsComponent
+                            },
+                            {
+                                path: 'user-account',
+                                component: UserAccountComponent
                             }
                         ]
                     }

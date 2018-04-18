@@ -29,6 +29,8 @@ import { UserAddComponent } from './components/admin/user-add/user-add.component
 import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { CartService } from './services/cart.service';
+import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
 
 
 const config = {
@@ -60,7 +62,9 @@ const config = {
     ProductListComponent,
     UserAddComponent,
     UserListComponent,
-    EditProductComponent
+    EditProductComponent,
+    ProductDetailsComponent,
+    UserAccountComponent
   ],
   imports: [
     CarouselModule.forRoot(),
