@@ -25,12 +25,10 @@ import { AddProductComponent } from './components/admin/add-product/add-product.
 import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
-import { UserAddComponent } from './components/admin/user-add/user-add.component';
-import { UserListComponent } from './components/admin/user-list/user-list.component';
-import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { CartService } from './services/cart.service';
 import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
+import { FormsModule } from '@angular/forms';
 
 
 const config = {
@@ -60,9 +58,6 @@ const config = {
     AdminNavbarComponent,
     AdminSidebarComponent,
     ProductListComponent,
-    UserAddComponent,
-    UserListComponent,
-    EditProductComponent,
     ProductDetailsComponent,
     UserAccountComponent
   ],
@@ -74,6 +69,7 @@ const config = {
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    FormsModule,
     routing
   ],
   providers: [DataService, CartService],

@@ -10,12 +10,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 //admin components
 import { AdminComponent } from './components/admin/admin.component';
 
-import { UserAddComponent } from './components/admin/user-add/user-add.component';
-import { UserListComponent } from './components/admin/user-list/user-list.component';
 
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
-import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 
@@ -71,21 +68,9 @@ const routes: Routes = [
                 component: AddProductComponent
             },
             {
-                path: 'edit-product',
-                component: EditProductComponent
-            },
-            {
                 path: 'product-list',
                 component: ProductListComponent
             },
-            {
-                path: 'add-user',
-                component: UserAddComponent
-            },
-            {
-                path: 'user-list',
-                component: UserListComponent
-            }
         ]
     }
 
