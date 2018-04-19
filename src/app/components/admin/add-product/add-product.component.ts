@@ -10,6 +10,8 @@ import { DataService } from '../../../services/data.service';
 })
 export class AddProductComponent implements OnInit {
 
+  public genresList: object[] = []
+  public authorsList: object[] = []
   public product: any = {}
   public cover: File
   public isEdit: boolean = false
@@ -18,7 +20,7 @@ export class AddProductComponent implements OnInit {
               private dataService: DataService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     feather.replace();
     this.acRt.queryParams.filter(param => param.isEdit).subscribe((data: any) => {
       this.isEdit = data.isEdit    
@@ -28,6 +30,8 @@ export class AddProductComponent implements OnInit {
     } else {
       this.product = {}
     }
+    this.authorsList = await this.dataService.fetchAuthors()
+    this.genresList = await this.dataService.fetchGenres()
   }
 
   public submitForm() {

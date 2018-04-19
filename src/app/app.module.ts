@@ -29,6 +29,8 @@ import { CartService } from './services/cart.service';
 import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { FormsModule } from '@angular/forms';
+import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
+import { AddAuthorComponent } from './components/admin/add-author/add-author.component';
 
 
 const config = {
@@ -59,7 +61,9 @@ const config = {
     AdminSidebarComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    AddGenreComponent,
+    AddAuthorComponent
   ],
   imports: [
     CarouselModule.forRoot(),

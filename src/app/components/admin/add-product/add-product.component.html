@@ -12,7 +12,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Creator </label>
-                                        <input type="text" class="form-control" placeholder="Creator " name="creator" [(ngModel)]="product.creator">
+                                        <select class="form-control" name="author" [(ngModel)]="product.creator">
+                                            <option *ngFor="let author of authorsList">{{author.name}} {{author.surname}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -41,8 +43,10 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Subject </label>
-                                        <input type="text" class="form-control" placeholder="Subject " name="subject" [(ngModel)]="product.subject">
+                                        <label>Genre </label>
+                                        <select name="genre" [(ngModel)]="product.subject" class="form-control">
+                                            <option *ngFor="let genre of genresList">{{genre.name}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

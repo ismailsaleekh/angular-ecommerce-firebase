@@ -9,7 +9,8 @@ import { ContentComponent } from './components/content/content.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 //admin components
 import { AdminComponent } from './components/admin/admin.component';
-
+import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
+import { AddAuthorComponent } from './components/admin/add-author/add-author.component';
 
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
@@ -71,6 +72,14 @@ const routes: Routes = [
                 path: 'product-list',
                 component: ProductListComponent
             },
+            {
+                path: 'add-genre',
+                component: AddGenreComponent
+            },
+            {
+                path: 'add-author',
+                component: AddAuthorComponent
+            }
         ]
     }
 
