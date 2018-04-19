@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  public genresList: object[] = []
+  public authorsList: object[] = []
 
-  ngOnInit() {
+  constructor(private dataService: DataService) { }
+
+  async ngOnInit() {
+    this.genresList = await this.dataService.fetchGenres()
+    this.authorsList = await this.dataService.fetchAuthors()
   }
-
 }

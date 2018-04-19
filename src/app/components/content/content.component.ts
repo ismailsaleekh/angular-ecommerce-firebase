@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ContentComponent implements OnInit {
   public productsList: any[] = []
+  public genresList: any[] = []
 
   constructor(private dataService: DataService,
               private cartService: CartService
@@ -16,9 +17,8 @@ export class ContentComponent implements OnInit {
 
   async ngOnInit(): Promise<any> {
     this.productsList = await this.dataService.fetchProducts()
-    this.productsList.forEach(item => {
-      item.inFav = false
-    })
+    this.genresList = await this.dataService.fetchGenres()
+    this.setInFav()
   }
 
   public async addToCart(product) {
@@ -29,4 +29,9 @@ export class ContentComponent implements OnInit {
     product.inFav = true
   }
 
+  private setInFav() {
+    this.productsList.forEach(item => {
+      item.inFav = false
+    })
+  }
 }
