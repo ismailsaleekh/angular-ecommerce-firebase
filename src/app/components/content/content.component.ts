@@ -1,6 +1,7 @@
 import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -11,8 +12,11 @@ export class ContentComponent implements OnInit {
   public productsList: any[] = []
   public genresList: any[] = []
 
+  public filteringGenre: string = ''
+
   constructor(private dataService: DataService,
-              private cartService: CartService
+              private cartService: CartService,
+              private router: Router
   ) { }
 
   async ngOnInit(): Promise<any> {
@@ -25,6 +29,11 @@ export class ContentComponent implements OnInit {
     await this.cartService.addToCart(product)  
   }
 
+  public viewDetail(product) {
+    this.dataService.viewDetailProduct = product
+    this.router.navigate(['product-details'])    
+  }
+
   public async addToFavorites(product) {
     product.inFav = true
   }
@@ -32,6 +41,26 @@ export class ContentComponent implements OnInit {
   private setInFav() {
     this.productsList.forEach(item => {
       item.inFav = false
+    })
+  }
+
+  private filterByGenre() {
+    this.dataService.filterByGenre.subscribe(genre => {
+      if (genre) {
+        this.productsList = this.productsList.filter(product => {
+          return product.subject === genre
+        })
+      }
+    })
+  }
+
+  private filterByAuthor() {
+    this.dataService.filterByAuthor.subscribe(author => {
+      if (author) {
+        this.productsList = this.productsList.filter(product => {
+          return product.creator === author
+        })
+      }
     })
   }
 }
