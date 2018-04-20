@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireStorageModule } from "angularfire2/storage";
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 //components
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { UserAccountComponent } from './components/user-account/user-account.com
 import { FormsModule } from '@angular/forms';
 import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
 import { AddAuthorComponent } from './components/admin/add-author/add-author.component';
+import { UserService } from './services/user.service';
 
 
 const config = {
@@ -63,12 +65,13 @@ const config = {
     ProductDetailsComponent,
     UserAccountComponent,
     AddGenreComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
   ],
   imports: [
     CarouselModule.forRoot(),
     CollapseModule .forRoot(),
     BrowserModule,
+    ModalModule.forRoot(),
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
@@ -76,7 +79,7 @@ const config = {
     FormsModule,
     routing
   ],
-  providers: [DataService, CartService],
+  providers: [DataService, CartService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
