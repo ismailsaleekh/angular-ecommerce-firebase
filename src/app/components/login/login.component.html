@@ -4,14 +4,12 @@
       <div class="col-sm-4 col-sm-offset-4">
         <div class="login-form"><!--login form-->
           <h2 class="text-center">Login to your account</h2>
-          <form action="#">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email Address" />
-            <span>
-              <input type="checkbox" class="checkbox"> 
-              Keep me signed in
-            </span>
+          <form (ngSubmit)="signWithEmail()">
+            <input type="email" name="email" placeholder="Email Address" [(ngModel)]="user.email">
+            <input type="password" name="pass" placeholder="password" [(ngModel)]="user.password">
+            <a (click)="showModal(template)">Do not have an account?</a>
             <button type="submit" class="btn btn-default">Login</button>
+            <p *ngIf="message">{{message}}</p>          
           </form>
         </div><!--/login form-->
       </div>
@@ -20,12 +18,39 @@
     <div class="row">
       <div class="col-sm-12 col-sm-offset-3">
         <div class="signup-form"><!--sign up form-->
-            <button type="submit" class="btn btn-default google">Signup with Google  <i class="fa fa-google-plus"></i></button>
-            <button type="submit" class="btn btn-default twitter">Signup with Twitter  <i class="fa fa-twitter"></i></button>
-            <button type="submit" class="btn btn-default facebook">Signup with Facebook  <i class="fa fa-facebook"></i></button>
+            <button type="submit" (click)="signGoogle()" class="btn btn-default google">SignIn with Google  <i class="fa fa-google-plus"></i></button>
+            <button type="submit" (click)="signTwitter()" class="btn btn-default twitter">SignIn with Twitter  <i class="fa fa-twitter"></i></button>
+            <button type="submit" (click)="signFacebook()" class="btn btn-default facebook">SignIn with Facebook  <i class="fa fa-facebook"></i></button>
         </div><!--/sign up form-->
       </div>
     </div>
     <hr>
   </div>
 </section><!--/form-->
+
+
+<ng-template #template>
+ 
+  <section id="form"><!--form-->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+          <div class="login-form"><!--login form-->
+            <h2 class="text-center">Register </h2>
+            <form (ngSubmit)="register()" *ngIf="!sent">
+              <input type="email" name="email" placeholder="Email Address" [(ngModel)]="registringUser.email">
+              <input type="password" name="pass" placeholder="password" [(ngModel)]="registringUser.password">
+              <button type="submit" class="btn btn-default">Register</button>
+            </form>
+            <p *ngIf="sent">Check your email address</p>
+          </div><!--/login form-->
+        </div>
+      </div>
+      <hr>
+      <hr>
+    </div>
+  </section><!--/form-->
+    
+
+
+</ng-template>
