@@ -13,6 +13,7 @@ export class DataService {
   private productsRef: AngularFireList<any>
   
   public selectedProduct: object = {}
+  public viewDetailProduct: object = {}
 
   constructor(private database: AngularFireDatabase,
               private storage: AngularFireStorage
@@ -73,5 +74,13 @@ export class DataService {
     }).then(() => {
       this.database.list('/products/').push(product)
     })
+  }
+
+  public addAuthor(author) {
+    this.database.list('/authors/').push(author)
+  }
+
+  public addGenre(genre) {
+    this.database.list('/genres/').push(genre)
   }
 }
