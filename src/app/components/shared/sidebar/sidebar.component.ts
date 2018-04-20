@@ -17,4 +17,12 @@ export class SidebarComponent implements OnInit {
     this.genresList = await this.dataService.fetchGenres()
     this.authorsList = await this.dataService.fetchAuthors()
   }
+
+  filterByGenre(genre: string) {
+    this.dataService.filter_G.next(genre)
+  }
+
+  filterByAuthor(author: string) {
+    this.dataService.filter_A.next(author)
+  }
 }

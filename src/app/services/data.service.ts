@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { AngularFireStorage } from "angularfire2/storage";
@@ -14,6 +15,12 @@ export class DataService {
   
   public selectedProduct: object = {}
   public viewDetailProduct: object = {}
+
+  public filter_G = new BehaviorSubject<string>('')
+  public filterByGenre = this.filter_G.asObservable()
+
+  public filter_A = new BehaviorSubject<string>('')
+  public filterByAuthor = this.filter_A.asObservable()
 
   constructor(private database: AngularFireDatabase,
               private storage: AngularFireStorage

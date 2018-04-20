@@ -1,12 +1,12 @@
 <div class="col-sm-3">
   <div class="left-sidebar">
-    <h2>Category</h2>
+    <h2>All books</h2>
     <div class="panel-group category-products">
       <!--category-productsr-->
       <div class="panel panel-default" *ngFor="let genre of genresList">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a>{{genre.genreName}}</a>
+            <a (click)="filterByGenre(genre.name)">{{genre.genreName}}</a>
           </h4>
         </div>
       </div>
@@ -17,7 +17,7 @@
         <div class="panel panel-default" *ngFor="let author of authorsList">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a>{{author.authorName}}</a>
+              <a (click)="filterByAuthor(author.name)">{{author.authorName}}</a>
             </h4>
           </div>
         </div>
