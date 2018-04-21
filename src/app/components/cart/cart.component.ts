@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { BsModalService } from 'ngx-bootstrap';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,13 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  private modalRef: BsModalRef;
 
   public cartList: object[] = []
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    private modal: BsModalService
+  ) { }
 
   async ngOnInit(): Promise<any> {
     console.log(this.cartService.list)
@@ -40,4 +47,9 @@ export class CartComponent implements OnInit {
       item.totalPrice = item.quantity * item.price
     })
   }
+
+  public showModal(template) {
+    this.modalRef = this.modal.show(template)
+  }
+  
 }
