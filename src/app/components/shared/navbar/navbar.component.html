@@ -5,12 +5,14 @@
         <div class="col-md-4 clearfix">
           <div class="logo pull-left">
           <a routerLink="/"><img src="../../assets/images/home/logo.png" alt="" /></a>
-          <h5 class="pull-right" style="position: absolute;">
-            <p>Ismail</p>
-            <p>WEST</p>
-            <p>BOT</p>
-            <p>RAQ</p>
-          </h5>
+          <div class="btn-group pull-right clearfix">
+              <h5 class="pull-right" style="position: sticky;">
+                  <p class="cs_text">Student: Ismoilkhon Salikhodjaev</p>
+                  <p class="cs_text">email: ismailsalikhodjaev@gmail.com</p>
+                  <p class="cs_text">Supervisor: Shirin Primkulova</p>
+                  <p class="cs_text">Topic: BookStore</p>
+                </h5>
+						</div>
           </div>
         </div>
         <div class="col-md-8 clearfix">
@@ -18,7 +20,7 @@
             <ul class="nav navbar-nav">
               <li><a routerLink="/user-account"><i class="fa fa-user"></i> Account</a></li>
               <li><a routerLink="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-              <li><a routerLink="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+              <li><a routerLink="/cart"><i class="fa fa-shopping-cart"></i> Cart<span class="badge">4</span></a></li>
               <li *ngIf="!isAuth"><a routerLink="/login"><i class="fa fa-lock"></i> Login</a></li>
               <li *ngIf="isAuth"><a (click)="logout()"><i class="fa fa-lock"></i> Logout</a></li>
             </ul>
