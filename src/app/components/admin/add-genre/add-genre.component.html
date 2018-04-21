@@ -9,7 +9,7 @@
                     <div class="content">
                         <form #form="ngForm" (ngSubmit)="submitForm()">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Genre </label>
                                         <input type="text" class="form-control" placeholder="Genre name " name="name" [(ngModel)]="genre.name">
@@ -17,6 +17,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info btn-fill pull-right">ADD GENRE</button>
+                            <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
