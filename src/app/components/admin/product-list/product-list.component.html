@@ -13,7 +13,7 @@
                         <th>Author</th>
                         <th>Language</th>
                         <th>Price</th>
-                        <th>Action</th>
+                        <th style="padding-left: 140px">Action</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let product of productsList; let i = index">
@@ -26,15 +26,11 @@
                                 <button class="btn btn-outline-secondary" (click)="setRec(product)">
                                     Set recommended
                                 </button>
-                            </td>
-                            <td>
                                 <button class="btn btn-outline-primary" (click)="goToEdit(product)">
-                                    Edit
-                                </button>
-                            </td>
-                            <td>
+                                        Edit
+                                    </button>
                                 <button class="btn btn-danger" (click)="delete(product)">
-                                    Delete
+                                            Delete
                                 </button>
                             </td>
                         </tr>
