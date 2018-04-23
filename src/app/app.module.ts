@@ -14,7 +14,6 @@ import { MainComponent } from './components/main/main.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule, CollapseModule   } from 'ngx-bootstrap';
@@ -51,7 +50,6 @@ const config = {
     SidebarComponent,
     ContentComponent,
     FooterComponent,
-    CheckoutComponent,
     NavbarComponent,
     CarouselComponent,
     CartComponent,

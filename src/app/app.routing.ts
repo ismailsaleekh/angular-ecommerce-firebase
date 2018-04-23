@@ -6,7 +6,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { MainComponent } from './components/main/main.component';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './components/content/content.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
 //admin components
 import { AdminComponent } from './components/admin/admin.component';
 import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
@@ -29,10 +28,6 @@ const routes: Routes = [
                     {
                         path: 'cart',
                         component: CartComponent
-                    },
-                    {
-                        path: 'checkout',
-                        component: CheckoutComponent
                     },
                     {
                         path: 'login',
