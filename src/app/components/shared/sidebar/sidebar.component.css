@@ -1,0 +1,5 @@
+.category-products .panel-default  :hover {
+  background-color: #3e4653;
+  cursor: pointer;
+  color: white;
+}
