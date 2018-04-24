@@ -15,6 +15,7 @@ import { ProductListComponent } from './components/admin/product-list/product-li
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { ProductDetailsComponent } from './components/content/product-details/product-details.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
+import { OrderListComponent } from './components/admin/order-list/order-list.component';
 
 const routes: Routes = [
     {
@@ -66,6 +67,10 @@ const routes: Routes = [
             {
                 path: 'product-list',
                 component: ProductListComponent
+            },
+            {
+                path: 'order-list',
+                component: OrderListComponent
             },
             {
                 path: 'add-genre',

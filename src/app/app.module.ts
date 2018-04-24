@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
 import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
 import { AddAuthorComponent } from './components/admin/add-author/add-author.component';
 import { UserService } from './services/user.service';
+import { OrderListComponent } from './components/admin/order-list/order-list.component';
 
 
 const config = {
@@ -64,6 +65,7 @@ const config = {
     UserAccountComponent,
     AddGenreComponent,
     AddAuthorComponent,
+    OrderListComponent,
   ],
   imports: [
     CarouselModule.forRoot(),
