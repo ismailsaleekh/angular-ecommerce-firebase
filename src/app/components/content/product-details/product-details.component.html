@@ -6,21 +6,24 @@
       </div>
     </div>
     <div class="col-sm-7">
+        <p><b>Title:</b> {{product.title}}</p>        
+        <p><b>ISBN:</b> {{product.id}}</p>
+        <p><b>Publisher:</b> {{product.publisher}}</p>
+        <p><b>Languge:</b> {{product.language}}</p>
+        <p><b>Subject:</b> {{product.subject}}</p>
+        <p><b>Year:</b> {{product.year}}</p>
+        <p><b>Size:</b> {{product.size}}</p>
       <div class="product-information"><!--/product-information-->
-        <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-        <h2>{{product.title}}</h2>
-        <p>ISBN: {{product.id}}</p>
         <span>
-          <span>{{product.price}}</span>
-          <button type="button" class="btn btn-fefault cart">
+          <span> <b>Price:</b>{{product.price}}</span>
+          <button type="button" class="btn btn-default cart">
             <i class="fa fa-shopping-cart"></i>
             Add to cart
           </button>
         </span>
-        <p><b>Availability:</b> In Stock</p>
-        <p><b>Condition:</b> New</p>
-        <p><b>Brand:</b> E-SHOPPER</p>
       </div><!--/product-information-->
     </div>
+    <h4><b>Description</b> {{product.description}} </h4>
+    
   </div><!--/product-details-->
   </div>
