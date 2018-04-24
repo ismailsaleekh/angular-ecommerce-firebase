@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { AddGenreComponent } from './components/admin/add-genre/add-genre.component';
 import { AddAuthorComponent } from './components/admin/add-author/add-author.component';
 import { UserService } from './services/user.service';
-import { OrderListComponent } from './components/admin/order-list/order-list.component';
+import { FavoritesService } from './services/favorites.service';
 
 
 const config = {
@@ -66,7 +66,6 @@ const config = {
     UserAccountComponent,
     AddGenreComponent,
     AddAuthorComponent,
-    OrderListComponent,
   ],
   imports: [
     CarouselModule.forRoot(),
@@ -81,7 +80,7 @@ const config = {
     FormsModule,
     routing
   ],
-  providers: [DataService, CartService, UserService],
+  providers: [DataService, CartService, UserService, FavoritesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

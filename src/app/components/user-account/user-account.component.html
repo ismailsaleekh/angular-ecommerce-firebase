@@ -3,22 +3,18 @@
     <!--product-details-->
     <div class="col-sm-5">
       <div class="view-product">
-        <img src="images/product-details/1.jpg" alt="" />
+        <img src="{{user?.photoURL}}" alt="{{user.name}}" style="border-radius: 60px"/>
       </div>
     </div>
     <div class="col-sm-7">
       <div class="product-information">
         <!--/product-information-->
-        <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-        <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-        <p>Web ID: 1089772</p>
-        <img src="images/product-details/rating.png" alt="" />
-        <p>
-          <b>Name:</b> In Stock</p>
-        <p>
-          <b>Email:</b> New</p>
-        <p>
-          <b>Brand:</b> E-SHOPPER</p>
+        <h2>{{user?.name}}</h2>
+        <p><b>Email:</b>{{user?.email}}</p>
+        <a [routerLink]="['/cart']"><h4>My cart list: ({{cartLength}} - items)</h4></a>
+        <a [routerLink]="['/']"><h4>Back to catalogue</h4></a>
+        <br>
+        <a (click)="logout()"><h4>Logout</h4></a>
       </div>
       <!--/product-information-->
     </div>
@@ -37,18 +33,24 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Title</th>
                         <th>Author</th>
                         <th>Language</th>
                         <th>Price</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr *ngFor="let item of favList; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.creator}}</td>
+                            <td>{{item.language}}</td>
+                            <td>{{item.price}}</td>
+                            <td>
+                                <button class="btn btn-danger" (click)="removeFromFavs(item)">
+                                    Delete from favorites
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -69,15 +71,19 @@
                         <th>Name</th>
                         <th>Author</th>
                         <th>Language</th>
-                        <th>Price</th>
+                        <th>Price per book</th>                        
+                        <th>Quantity</th>
+                        <th>Total price</th>                        
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr *ngFor="let item of orderList; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.creator}}</td>
+                            <td>{{item.language}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.totalPrice}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,5 +1,6 @@
 import { DataService } from './data.service';
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 @Injectable()
@@ -7,8 +8,13 @@ import { Injectable } from "@angular/core";
 export class CartService{
 
   private cartList: any[] = []
+  private badge = new BehaviorSubject<number>(0)
+  public cartLength = this.badge.asObservable()
+
   
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+    this.list
+  }
 
   addToCart(product: any): void {
     product.quantity = product.quantity || 1
@@ -23,13 +29,21 @@ export class CartService{
       this.cartList[index].quantity += 1
     }
     this.addToStorage(this.cartList)
+    this.badge.next(this.cartList.length)
   }
 
   addToStorage(list: object[]): void {
     localStorage.setItem('cartListIds', JSON.stringify(list))
+    this.badge.next(list.length)
   }
 
   get list() {
-    return JSON.parse(localStorage.getItem('cartListIds'))
+    const list = JSON.parse(localStorage.getItem('cartListIds'))
+    if (!list) {
+      return []
+    } else {
+      this.badge.next(list.length)
+      return list
+    }
   }
 }

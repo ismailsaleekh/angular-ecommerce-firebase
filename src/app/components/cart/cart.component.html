@@ -17,14 +17,14 @@
           <tr *ngFor="let item of cartList">
             <td class="cart_product">
               <a href="">
-                <img class="cart_img" src="{{item.coverUrl}}" alt="{{item.name}}">
+                <img class="cart_img" src="{{item.coverUrl}}" alt="{{item.title}}">
               </a>
             </td>
             <td class="cart_description">
               <h4>
-                <a href="">{{item.name}}</a>
+                <a (click)="viewDetails(item)">{{item.title}}</a>
               </h4>
-              <p>{{item.author}}, {{item.year}}, {{item.language}}</p>
+              <p>{{item.creator}}, {{item.year}}, {{item.language}}</p>
             </td>
             <td class="cart_price">
               <p>{{item.price}}</p>
@@ -51,12 +51,16 @@
     <div class="row">
       <div class="col-sm-12 col-sm-offset-5" style="margin-bottom: 15px">
         <button (click)="showModal(template)" class="btn btn-primary">
-          Check out
+          Check out for {{totalSum}} UZS
         </button>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
 <ng-template #template>
   <section id="form">
     <div class="container">
@@ -64,17 +68,17 @@
         <div class="col-sm-4 col-sm-offset-1">
           <div class="login-form">
             <h2 class="text-center">Checkout</h2>
-            <form>
+            <form #form="ngForm">
               <label>Name</label>
-              <input type="text" name="name" placeholder="Name">
+              <input type="text" name="name" [(ngModel)]="user.name" placeholder="Name" required>
               <label>Address</label>
-              <input type="text" name="address" placeholder="Address">
+              <input type="text" name="address" [(ngModel)]="user.address" placeholder="Address" required>
               <label>Phone</label>
-              <input type="text" name="phone" placeholder="Phone">
+              <input type="text" name="phone" [(ngModel)]="user.phoneNumber" placeholder="Phone" required>
               <label>Email</label>
-              <input type="email" name="email" placeholder="Email">
-              <p class="cart_total_price">$59</p>              
-              <button type="submit" class="btn btn-default">Checkout</button>
+              <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
+              <p class="cart_total_price">Total sum is: {{totalSum}} UZS</p>
+              <button type="button" (click)="checkout()" class="btn btn-default">Checkout</button>
             </form>
           </div>
         </div>

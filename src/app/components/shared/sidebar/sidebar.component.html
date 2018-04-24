@@ -1,23 +1,24 @@
 <div class="col-sm-3">
   <div class="left-sidebar">
-    <h2>All books</h2>
+    <a (click)="filterByGenre('*')"><h2>All Genres</h2></a>
     <div class="panel-group category-products">
       <!--category-productsr-->
+      
       <div class="panel panel-default" *ngFor="let genre of genresList">
-        <div class="panel-heading">
+        <div class="panel-heading" (click)="filterByGenre(genre.name)">
           <h4 class="panel-title">
-            <a (click)="filterByGenre(genre.name)">{{genre.name}}</a>
+            <a >{{genre.name}}</a>
           </h4>
         </div>
       </div>
       <!--category end-->
-      <h2 style="margin-top: 20px">Authors</h2>
+      <a (click)="filterByAuthor('*')"><h2 style="margin-top: 20px">All Authors</h2></a>
       <div class="panel-group category-products">
         <!--category-productsr-->
         <div class="panel panel-default" *ngFor="let author of authorsList">
-          <div class="panel-heading">
+          <div class="panel-heading" (click)="filterByAuthor(author.name)">
             <h4 class="panel-title">
-              <a (click)="filterByAuthor(author.name)">{{author.name}} {{author.surname}}</a>
+              <a >{{author.name}} {{author.surname}}</a>
             </h4>
           </div>
         </div>

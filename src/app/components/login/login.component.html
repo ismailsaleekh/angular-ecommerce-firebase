@@ -4,7 +4,7 @@
       <div class="col-sm-4 col-sm-offset-4">
         <div class="login-form"><!--login form-->
           <h2 class="text-center">Login to your account</h2>
-          <form (ngSubmit)="signWithEmail()">
+          <form (ngSubmit)="userService.signInWithEmail(user.email, user.password)">
             <input type="email" name="email" placeholder="Email Address" [(ngModel)]="user.email">
             <input type="password" name="pass" placeholder="password" [(ngModel)]="user.password">
             <a (click)="showModal(template)">Do not have an account?</a>
@@ -18,9 +18,9 @@
     <div class="row">
       <div class="col-sm-12 col-sm-offset-3">
         <div class="signup-form"><!--sign up form-->
-            <button type="submit" (click)="signGoogle()" class="btn btn-default google">SignIn with Google  <i class="fa fa-google-plus"></i></button>
-            <button type="submit" (click)="signTwitter()" class="btn btn-default twitter">SignIn with Twitter  <i class="fa fa-twitter"></i></button>
-            <button type="submit" (click)="signFacebook()" class="btn btn-default facebook">SignIn with Facebook  <i class="fa fa-facebook"></i></button>
+            <button type="submit" (click)="userService.signInWithGoogle()" class="btn btn-default google">SignIn with Google  <i class="fa fa-google-plus"></i></button>
+            <button type="submit" (click)="userService.signWithTwitter()" class="btn btn-default twitter">SignIn with Twitter  <i class="fa fa-twitter"></i></button>
+            <button type="submit" (click)="userService.signWithFacebook()" class="btn btn-default facebook">SignIn with Facebook  <i class="fa fa-facebook"></i></button>
         </div><!--/sign up form-->
       </div>
     </div>

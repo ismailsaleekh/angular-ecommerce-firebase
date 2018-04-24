@@ -11,25 +11,35 @@ export class DataService {
   private products: object[] = []
   private genres: object[] = []
   private authors: object[] = []
+  private orders: object[] = []
   private productsRef: AngularFireList<any>
+  private ordersRef: AngularFireList<any>
   
   public selectedProduct: object = {}
   public viewDetailProduct: object = {}
 
-  public filter_G = new BehaviorSubject<string>('')
+  public filter_G = new BehaviorSubject<string>(null)
   public filterByGenre = this.filter_G.asObservable()
 
-  public filter_A = new BehaviorSubject<string>('')
+  public filter_A = new BehaviorSubject<string>(null)
   public filterByAuthor = this.filter_A.asObservable()
+
+  public filter_T = new BehaviorSubject<string>(null)
+  public filterTitle = this.filter_T.asObservable()
+
 
   constructor(private database: AngularFireDatabase,
               private storage: AngularFireStorage
   ) { 
-    this.productsRef = this.database.list('products')    
+    this.productsRef = this.database.list('products')
+    this.fetchOrders()    
   }
 
   public async fetchProducts(): Promise<any> {
-    await this.database.list('/products/').snapshotChanges()
+    if (this.products.length > 0) {
+      return this.products
+    } else {
+      await this.database.list('/products/').snapshotChanges()
       .subscribe((data: any): void => {
         data.forEach(element => {
           const product = element.payload.val()
@@ -38,10 +48,14 @@ export class DataService {
         });
       })
     return this.products
+    }
   }
 
   public async fetchGenres(): Promise<any> {
-    await this.database.list('/genres/').snapshotChanges()
+    if (this.genres.length > 0) {
+      return this.genres
+    } else {
+      await this.database.list('/genres/').snapshotChanges()
       .subscribe((data: any): void => {
         data.forEach(element => {
           const genre = element.payload.val()
@@ -51,10 +65,15 @@ export class DataService {
       })
 
     return this.genres
+    }
+    
   }
 
   public async fetchAuthors(): Promise<any> {
-    await this.database.list('/authors/').snapshotChanges()
+    if (this.authors.length > 0) {
+      return this.authors
+    } else {
+      await this.database.list('/authors/').snapshotChanges()
       .subscribe((data:any): void => {
         data.forEach(element => {
           const author = element.payload.val()
@@ -64,6 +83,24 @@ export class DataService {
       })
     
     return this.authors
+    }
+  }
+
+  public async fetchOrders() {
+    if (this.orders.length > 0) {
+      return this.orders
+    } else {
+      await this.database.list('/checkout/').snapshotChanges()
+      .subscribe((data: any) => {
+        data.forEach(element => {
+          const order = element.payload.val()
+          order.key = element.key
+          this.orders.push(order)
+        });
+      })
+      return this.orders
+
+    }
   }
 
   public async updateProduct(key: string, product: object) {
@@ -89,5 +126,9 @@ export class DataService {
 
   public addGenre(genre) {
     this.database.list('/genres/').push(genre)
+  }
+  
+  public checkout(product) {
+    this.database.list('/checkout/').push(product)
   }
 }

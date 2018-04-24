@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   public message: string = ''
 
-  constructor(private userService: UserService,
+  constructor(public userService: UserService,
               private modal: BsModalService
   ) { }
 
@@ -25,22 +25,6 @@ export class LoginComponent implements OnInit {
     this.userService.loginFailed.subscribe(data => {
       this.message = data
     })
-  }
-
-  public signGoogle() {
-    this.userService.signInWithGoogle()
-  }
-
-  public signFacebook() {
-    this.userService.signWithFacebook()
-  }
-
-  public signTwitter() {
-    this.userService.signWithTwitter()
-  }
-
-  public signWithEmail() {
-    this.userService.signInWithEmail(this.user.email, this.user.password)
   }
 
   public showModal(template) {

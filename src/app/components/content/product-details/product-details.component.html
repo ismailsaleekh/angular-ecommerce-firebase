@@ -2,7 +2,7 @@
   <div class="product-details"><!--product-details-->
     <div class="col-sm-5">
       <div class="view-product">
-        <img src="{{product.coverUrl}}" alt="" />
+        <img src="{{product.coverUrl}}" alt="{{product.title}}" style="border-radius: 20px" />
       </div>
     </div>
     <div class="col-sm-7">
@@ -16,7 +16,7 @@
       <div class="product-information"><!--/product-information-->
         <span>
           <span> <b>Price:</b>{{product.price}}</span>
-          <button type="button" class="btn btn-default cart">
+          <button type="button" class="btn btn-default cart" (click)="addToCart(product)">
             <i class="fa fa-shopping-cart"></i>
             Add to cart
           </button>

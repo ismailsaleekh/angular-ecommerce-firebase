@@ -18,7 +18,13 @@ export class UserService {
 
   constructor(private auth: AngularFireAuth,
               private router: Router
-  ) { }
+  ) { 
+    if (this.user.email) {
+      this.isAuthorized.next(true)
+    } else {
+      this.isAuthorized.next(false)
+    }
+  }
 
   public signInWithGoogle() {
     this.auth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -66,7 +72,12 @@ export class UserService {
   }
  
   get user() {
-    return JSON.parse(localStorage.getItem('userData'))
+    const user = JSON.parse(localStorage.getItem('userData'))
+    if (user) {
+      return user
+    } else {
+      return {}
+    }
   }
 
   public registerUserWithEmail(email, password) {

@@ -47,4 +47,7 @@ export class AddProductComponent implements OnInit {
       this.product.image = file
     }
   }
+  ngOnDestroy() {
+    this.product = {}
+  }
 }
