@@ -11,17 +11,21 @@ import { Router } from '@angular/router';
 export class ContentComponent implements OnInit {
   public productsList: any[] = []
   public genresList: any[] = []
+  public authorList : any[] = []
 
   public filteringGenre: string = ''
 
   constructor(private dataService: DataService,
               private cartService: CartService,
-              private router: Router
+              private router: Router,
+              
   ) { }
 
   async ngOnInit(): Promise<any> {
     this.productsList = await this.dataService.fetchProducts()
+    console.log(this.productsList)
     this.genresList = await this.dataService.fetchGenres()
+    this.authorList = await this.dataService.fetchAuthors()
     this.setInFav()
   }
 

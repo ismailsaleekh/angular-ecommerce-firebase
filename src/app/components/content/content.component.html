@@ -8,14 +8,13 @@
           <div class="productinfo text-center">
             <img class="img_cover" src="{{product.coverUrl}}" alt="product.name" />
             <h2>{{product.price}}</h2>
-            <p>{{product.name}}</p>
           </div>
           <div class="product-overlay">
             <div class="overlay-content">
-                <a (click)="viewDetail(product)" class="btn btn-default add-to-cart">
-                    <i class="fa fa-eye"></i>View product</a>
-              <h2>{{product.price}}</h2>
-              <p>{{product.name}}</p>
+                    <p>{{product.creator}}</p>
+              <h4 class="title">{{product.title}}</h4>
+              <a (click)="viewDetail(product)" class="btn btn-default add-to-cart">
+                <i class="fa fa-eye"></i>View product</a>
               <a (click)="addToCart(product)" class="btn btn-default add-to-cart">
                 <i class="fa fa-shopping-cart"></i>Add to cart</a>
             </div>
