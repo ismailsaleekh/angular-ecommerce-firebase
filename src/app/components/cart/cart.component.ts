@@ -83,6 +83,8 @@ export class CartComponent implements OnInit {
     checkout.isDelivered = false
 
     this.dataService.checkout(checkout)
+    alert(`checked out for ${this.totalSum} UZS, check your account`)
+    window.location.reload()
   }
   
 }

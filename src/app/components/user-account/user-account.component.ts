@@ -59,7 +59,10 @@ export class UserAccountComponent implements OnInit {
   }
 
   filterProducts(list) {
-    list.forEach(element => {
+    const relatedList = list.filter(item => {
+      return this.user.email === item.user_email
+    })
+    relatedList.forEach(element => {
       const keys = Object.keys(element).filter(item => {
         return item.includes('product')
       })
