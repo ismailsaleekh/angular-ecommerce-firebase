@@ -6,7 +6,7 @@
       <div class="panel panel-default" *ngFor="let genre of genresList">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a (click)="filterByGenre(genre.name)">{{genre.genreName}}</a>
+            <a (click)="filterByGenre(genre.name)">{{genre.name}}</a>
           </h4>
         </div>
       </div>
@@ -17,7 +17,7 @@
         <div class="panel panel-default" *ngFor="let author of authorsList">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a (click)="filterByAuthor(author.name)">{{author.authorName}}</a>
+              <a (click)="filterByAuthor(author.name)">{{author.name}} {{author.surname}}</a>
             </h4>
           </div>
         </div>

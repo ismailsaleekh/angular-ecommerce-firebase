@@ -16,6 +16,9 @@ export class SidebarComponent implements OnInit {
   async ngOnInit() {
     this.genresList = await this.dataService.fetchGenres()
     this.authorsList = await this.dataService.fetchAuthors()
+    console.log("1", this.genresList)
+    console.log("2", this.authorsList)
+    
   }
 
   filterByGenre(genre: string) {
