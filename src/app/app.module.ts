@@ -7,6 +7,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireStorageModule } from "angularfire2/storage";
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 //components
 import { AppComponent } from './app.component';
@@ -71,6 +72,7 @@ const config = {
     CarouselModule.forRoot(),
     CollapseModule .forRoot(),
     BrowserModule,
+    BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
